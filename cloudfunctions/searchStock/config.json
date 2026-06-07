@@ -1,0 +1,5 @@
+{
+  "permissions": { "openapi": [] },
+  "timeout": 10,
+  "memorySize": 256
+}

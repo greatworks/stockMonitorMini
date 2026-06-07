@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/anomaly/anomaly",
+    "pages/lhb/lhb"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#121212",
+    "navigationBarTitleText": "异动计算器",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#121212",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#888888",
+    "selectedColor": "#f5c518",
+    "backgroundColor": "#141414",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/anomaly/anomaly",
+        "text": "异动计算"
+      },
+      {
+        "pagePath": "pages/lhb/lhb",
+        "text": "龙虎榜揭秘"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

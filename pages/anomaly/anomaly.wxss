@@ -1,0 +1,150 @@
+.ph {
+  color: #555;
+  font-size: 32rpx;
+}
+
+.stock-head-card {
+  padding: 32rpx 28rpx;
+}
+
+.stock-head-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stock-name {
+  font-size: 44rpx;
+  font-weight: 600;
+  color: #fff;
+}
+
+.stock-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 12rpx;
+}
+
+.stock-code {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.stock-head-right {
+  text-align: right;
+}
+
+.stock-price {
+  display: block;
+  font-size: 52rpx;
+  font-weight: 600;
+}
+
+.stock-chg {
+  display: block;
+  font-size: 30rpx;
+  margin-top: 8rpx;
+}
+
+.metric-card {
+  padding: 8rpx 28rpx;
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28rpx 0;
+  border-bottom: 1rpx solid #2a2a2a;
+}
+
+.metric-row:last-child {
+  border-bottom: none;
+}
+
+.metric-row.highlight {
+  padding: 32rpx 0;
+}
+
+.metric-label {
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.metric-label.bold {
+  color: #fff;
+  font-weight: 600;
+}
+
+.metric-val {
+  font-size: 32rpx;
+}
+
+.metric-val.big {
+  font-size: 44rpx;
+  font-weight: 600;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+.cum-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28rpx 0;
+}
+
+.cum-row.border-b {
+  border-bottom: 1rpx solid #2a2a2a;
+}
+
+.cum-label {
+  display: block;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.cum-threshold {
+  display: block;
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 8rpx;
+}
+
+.cum-right {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.cum-val {
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.cum-hint {
+  font-size: 24rpx;
+  color: #888;
+  margin-bottom: 16rpx;
+  line-height: 1.5;
+}
+
+.tag-warn {
+  background: rgba(255, 77, 79, 0.15);
+  color: #ff4d4f;
+  font-size: 22rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 8rpx;
+}
+
+.brand-icon-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+  display: block;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "龙虎榜揭秘",
+  "usingComponents": {
+    "stock-search": "/components/stock-search/stock-search"
+  }
+}

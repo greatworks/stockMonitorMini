@@ -1,0 +1,36 @@
+<view class="stock-search">
+  <view wx:if="{{label}}" class="search-label">{{label}}</view>
+  <view class="search-row">
+    <view class="search-input-wrap">
+      <input
+        class="search-input"
+        placeholder="{{placeholder}}"
+        placeholder-class="ph"
+        value="{{keyword}}"
+        hold-keyboard="{{showSuggestions}}"
+        bindinput="onInput"
+        bindfocus="onFocus"
+        bindblur="onBlur"
+        bindconfirm="onConfirm"
+      />
+      <view
+        wx:if="{{showSuggestions && suggestions.length > 0}}"
+        class="suggest-dropdown"
+        catchtouchstart="onDropdownTouch"
+      >
+        <view
+          wx:for="{{suggestions}}"
+          wx:key="code"
+          class="suggest-item"
+          hover-class="suggest-item-hover"
+          catchtouchstart="onItemTouchStart"
+          data-index="{{index}}"
+        >
+          <text class="suggest-name">{{item.name}}</text>
+          <text class="suggest-code">{{item.code}}</text>
+        </view>
+      </view>
+    </view>
+    <button class="search-btn" bindtap="onSearchTap">{{btnText}}</button>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<view class="tab-bar">
+  <view
+    class="tab-item {{selected === 0 ? 'active' : ''}}"
+    data-index="0"
+    bindtap="switchTab"
+  >
+    <view class="tab-icon-wrap {{selected === 0 ? 'active-border' : ''}}">
+      <text class="tab-icon">!</text>
+    </view>
+    <text class="tab-text">异动计算</text>
+    <view wx:if="{{selected === 0}}" class="tab-line"></view>
+  </view>
+  <view
+    class="tab-item {{selected === 1 ? 'active' : ''}}"
+    data-index="1"
+    bindtap="switchTab"
+  >
+    <view class="tab-icon-wrap {{selected === 1 ? 'active-border' : ''}}">
+      <text class="tab-icon search-icon">⌕</text>
+    </view>
+    <text class="tab-text">龙虎榜揭秘</text>
+    <view wx:if="{{selected === 1}}" class="tab-line"></view>
+  </view>
+</view>

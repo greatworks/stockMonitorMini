@@ -1,0 +1,90 @@
+<view class="page">
+  <!-- 品牌卡片 -->
+  <view class="card brand-card">
+    <view class="brand-left">
+      <view class="brand-icon">🐂
+      <!-- <image class="brand-icon-img" src="/images/bull-leap-icon.png" mode="aspectFill" /> -->
+      </view>
+      <view>
+        <view class="brand-title">异动计算器</view>
+        <view class="brand-sub">异动测算 · 偏离追踪</view>
+      </view>
+    </view>
+    <view class="clock-box">{{clock}}</view>
+  </view>
+
+  <!-- 搜索 -->
+  <view class="card search-card">
+    <stock-search
+      value="{{keyword}}"
+      label="输入代码/名称/拼音"
+      bind:change="onKeywordChange"
+      bind:search="onStockSearch"
+    />
+    <view class="disclaimer">本工具按照交易所公开的规则计算，仅供参考。最终异动认定受多方面因素影响，请以官方披露的异动信息为准。</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading-tip">计算中...</view>
+
+  <view wx:if="{{!result && !loading && !searched}}" class="card empty-state">
+    <view class="empty-icon search-icon">⌕</view>
+    <text class="empty-text">请输入代码或名称查询和计算实时偏离值</text>
+  </view>
+
+  <!-- 结果 -->
+  <block wx:if="{{result && !loading}}">
+    <view class="card stock-head-card">
+      <view class="stock-head-top">
+        <view class="stock-head-left">
+          <text class="stock-name">{{result.name}}</text>
+          <view class="stock-tags">
+            <text class="tag-market">{{result.marketName}}</text>
+            <text class="tag-board">{{result.boardName}}</text>
+            <text class="stock-code">{{result.code}}</text>
+          </view>
+        </view>
+        <view class="stock-head-right">
+          <text class="stock-price {{result.changeClass}}">{{result.price}}</text>
+          <text class="stock-chg {{result.changeClass}}">{{result.changeText}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="card metric-card">
+      <view class="metric-row">
+        <text class="metric-label">个股涨幅</text>
+        <text class="metric-val {{result.stockPctClass}}">{{result.stockPctText}}</text>
+      </view>
+      <view class="metric-row">
+        <text class="metric-label">- 对应指数 [{{result.indexName}}]</text>
+        <text class="metric-val {{result.indexPctClass}}">{{result.indexPctText}}</text>
+      </view>
+      <view class="metric-row highlight">
+        <text class="metric-label bold">当日偏离值</text>
+        <text class="metric-val big {{result.dayDeviationClass}}">{{result.dayDeviationText}}</text>
+      </view>
+    </view>
+
+    <view class="card">
+      <view class="section-title">累计偏离值</view>
+      <view wx:if="{{!result.cumulativeDataReady}}" class="cum-hint">历史K线数据不足，累计偏离值暂无法计算</view>
+      <view
+        wx:for="{{result.cumulative}}"
+        wx:key="days"
+        class="cum-row {{index < result.cumulative.length - 1 ? 'border-b' : ''}}"
+      >
+        <view class="cum-left">
+          <text class="cum-label">{{item.label}}</text>
+          <text class="cum-threshold">{{item.threshold}}</text>
+        </view>
+        <view class="cum-right">
+          <text class="cum-val {{item.valueClass}}">{{item.valueText}}</text>
+          <text class="tag-safe" wx:if="{{item.dataReady && item.safe}}">安全</text>
+          <text class="tag-warn" wx:elif="{{item.dataReady && !item.safe}}">关注</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view wx:if="{{!result && !loading && searched}}" class="empty-tip">未找到股票或数据加载失败</view>
+</view>

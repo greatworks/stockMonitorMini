@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "异动计算器",
+  "usingComponents": {
+    "stock-search": "/components/stock-search/stock-search"
+  }
+}

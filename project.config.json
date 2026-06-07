@@ -1,0 +1,75 @@
+{
+  "description": "Project configuration",
+  "miniprogramRoot": "./",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "compileType": "miniprogram",
+  "appid": "wx520xxxxxxxxxxxxxxxxx",
+  "setting": {
+    "es6": false,
+    "postcss": false,
+    "compileWorklet": false,
+    "minified": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "enhance": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false,
+    "condition": false,
+    "swc": false,
+    "disableSWC": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "simulatorPluginLibVersion": {},
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "folder",
+        "value": ".git"
+      },
+      {
+        "type": "folder",
+        "value": ".cursor"
+      },
+      {
+        "type": "folder",
+        "value": "node_modules"
+      },
+      {
+        "type": "folder",
+        "value": "components/echarts-for-weixin-master"
+      },
+      {
+        "type": "folder",
+        "value": "components/qiun-wx-ucharts"
+      },
+      {
+        "type": "folder",
+        "value": "components/ec-canvas"
+      },
+      {
+        "type": "folder",
+        "value": "pages/index"
+      },
+      {
+        "type": "folder",
+        "value": "pages/result"
+      },
+      {
+        "type": "folder",
+        "value": "pages/detail"
+      }
+    ],
+    "include": []
+  },
+  "editorSetting": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
+}

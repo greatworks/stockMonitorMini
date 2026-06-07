@@ -1,0 +1,52 @@
+<view class="page">
+  <view class="card brand-card">
+    <view class="brand-left">
+      <view class="brand-icon">🐂</view>
+      <view>
+        <view class="brand-title">异动计算器</view>
+        <view class="brand-sub">席位追踪 · 资金解读</view>
+      </view>
+    </view>
+    <view class="clock-box">{{clock}}</view>
+  </view>
+
+  <view class="card search-card">
+    <stock-search
+      value="{{keyword}}"
+      label="输入代码/名称/拼音查询龙虎榜"
+      bind:change="onKeywordChange"
+      bind:search="onStockSearch"
+    />
+    <view class="disclaimer">本工具数据来源于公开市场信息，AI解读仅供参考，不构成投资建议。投资有风险，入市需谨慎。</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading-tip">查询中...</view>
+
+  <view wx:if="{{list.length === 0 && !loading && !searched}}" class="card empty-state">
+    <view class="empty-icon lhb-icon">📋</view>
+    <text class="empty-text">请输入代码或名称查询龙虎榜</text>
+    <text class="empty-sub">可查看历史上榜记录</text>
+  </view>
+
+  <view wx:if="{{list.length > 0 && !loading}}" class="lhb-list">
+    <view wx:for="{{list}}" wx:key="id" class="card lhb-item">
+      <view class="lhb-top">
+        <view class="lhb-left">
+          <view class="lhb-name-row">
+            <text class="lhb-name">{{item.name}}</text>
+            <text class="lhb-code">{{item.code}}</text>
+          </view>
+          <text class="lhb-date">{{item.dateText}}</text>
+          <text class="lhb-turnover">{{item.turnoverText}}</text>
+          <text wx:if="{{item.reason}}" class="lhb-reason">{{item.reason}}</text>
+        </view>
+        <view class="lhb-right">
+          <text class="lhb-price">{{item.price}}</text>
+          <text class="lhb-chg {{item.changeClass}}">{{item.changeText}}</text>
+        </view>
+      </view>
+    </view>
+  </view> 
+
+  <view wx:if="{{list.length === 0 && !loading && searched}}" class="empty-tip">暂无龙虎榜记录</view>
+</view>
